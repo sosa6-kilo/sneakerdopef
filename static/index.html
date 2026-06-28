@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — О нас</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html" aria-current="page">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">2</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow hero__eyebrow">Limited. Iconic. Timeless.</p>
+          <h1>Sneaker<br />Culture</h1>
+          <p>Sneakerdope — это больше, чем магазин. Это культура. Это стиль. Это ты.</p>
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn--primary">Смотреть каталог</a>
+            <a href="#о-компании" class="hero__about-link">О компании</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="img/other/hero1.jpg" alt="Sneakerdope" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Mission / about ===== -->
+    <section class="mission" id="о-компании">
+      <div class="container mission__grid">
+        <div>
+          <div class="mission__logo">Sneakerdope</div>
+          <blockquote>Найди свою пару. Найди себя.</blockquote>
+        </div>
+        <p class="mission__text">
+          Sneakerdope — сеть онлайн-магазинов оригинальных кроссовок ведущих
+          мировых брендов. Мы собираем в одном каталоге актуальные релизы,
+          культовые модели и ограниченные коллаборации, а наша команда
+          консультирует по выбору размера, материалов и истории каждой пары.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Новинки компании (slider) ===== -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Новинки компании</h2>
+          <a href="catalog.html" class="section-head__link">Весь каталог</a>
+        </div>
+
+        <div class="slider">
+          <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Предыдущие товары">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5 8 12l7 7"/></svg>
+          </button>
+          <div class="slider__viewport">
+            <div class="slider__track">
+
+            <article class="product-card">
+              <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              </div>
+              <p class="product-card__brand">Nike</p>
+              <h3 class="product-card__name"><a href="product.html">Air Jordan 1 Retro High OG</a></h3>
+              <p class="product-card__price price">23 990 ₽</p>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              </div>
+              <p class="product-card__brand">Adidas</p>
+              <h3 class="product-card__name"><a href="product.html">Yeezy Boost 350 V2 Bone</a></h3>
+              <p class="product-card__price price">15 990 ₽</p>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              </div>
+              <p class="product-card__brand">New Balance</p>
+              <h3 class="product-card__name"><a href="product.html">2002R Protection Pack</a></h3>
+              <p class="product-card__price price">17 990 ₽</p>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              </div>
+              <p class="product-card__brand">Converse</p>
+              <h3 class="product-card__name"><a href="product.html">Chuck 70 Canvas Black</a></h3>
+              <p class="product-card__price price">7 990 ₽</p>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              </div>
+              <p class="product-card__brand">Vans</p>
+              <h3 class="product-card__name"><a href="product.html">Old Skool Pro Black</a></h3>
+              <p class="product-card__price price">9 490 ₽</p>
+            </article>
+
+            </div>
+          </div>
+          <button type="button" class="slider__arrow slider__arrow--next" aria-label="Следующие товары">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 5 7 7-7 7"/></svg>
+          </button>
+          <div class="slider__dots">
+            <span class="dot is-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== Bestsellers + grid ===== -->
+    <section class="highlights">
+      <div class="container highlights__layout">
+
+        <aside class="bestsellers">
+          <div class="bestsellers__head">
+            <span class="bestsellers__title">Хиты продаж</span>
+            <a href="catalog.html" class="bestsellers__more">Смотреть все</a>
+          </div>
+
+          <div class="bestsellers__item">
+            <span class="bestsellers__rank">01</span>
+            <div class="bestsellers__thumb"></div>
+            <div>
+              <p class="bestsellers__name">Nike Dunk Low Retro</p>
+              <p class="bestsellers__price">12 990 ₽</p>
+            </div>
+          </div>
+
+          <div class="bestsellers__item">
+            <span class="bestsellers__rank">02</span>
+            <div class="bestsellers__thumb"></div>
+            <div>
+              <p class="bestsellers__name">New Balance 9060</p>
+              <p class="bestsellers__price">16 990 ₽</p>
+            </div>
+          </div>
+
+          <div class="bestsellers__item">
+            <span class="bestsellers__rank">03</span>
+            <div class="bestsellers__thumb"></div>
+            <div>
+              <p class="bestsellers__name">Air Jordan 4 Retro</p>
+              <p class="bestsellers__price">23 990 ₽</p>
+            </div>
+          </div>
+        </aside>
+
+        <div class="grid-4">
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              <button class="product-card__add" type="button" aria-label="В корзину">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <p class="product-card__brand">Air Jordan</p>
+            <h3 class="product-card__name"><a href="product.html">Air Jordan 4 Retro Fear</a></h3>
+            <p class="product-card__price price">23 990 ₽</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              <button class="product-card__add" type="button" aria-label="В корзину">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <p class="product-card__brand">Adidas</p>
+            <h3 class="product-card__name"><a href="product.html">Yeezy Boost 350 V2 Bone</a></h3>
+            <p class="product-card__price price">15 990 ₽</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              <button class="product-card__add" type="button" aria-label="В корзину">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <p class="product-card__brand">New Balance</p>
+            <h3 class="product-card__name"><a href="product.html">New Balance 2002R Protection Pack</a></h3>
+            <p class="product-card__price price">17 990 ₽</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__media">
+              <span class="tag product-card__badge">New</span>
+              <a class="product-card__media-link" href="product.html" aria-label="Открыть товар"></a>
+              Фото товара
+              <button class="product-card__add" type="button" aria-label="В корзину">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <p class="product-card__brand">Converse</p>
+            <h3 class="product-card__name"><a href="product.html">Converse Chuck 70 Canvas Black</a></h3>
+            <p class="product-card__price price">7 990 ₽</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Category banners ===== -->
+    <section style="padding:0">
+      <div class="banners">
+        <a class="banner" href="catalog.html?gender=male">
+          <img class="banner__img" src="img/other/man.jpg" alt="Мужчины" />
+          <div class="banner__label">
+            <h3>Мужчины</h3>
+            <span>Смотреть</span>
+          </div>
+        </a>
+        <a class="banner" href="catalog.html?gender=female">
+          <img class="banner__img" src="img/other/woman.jpg" alt="Женщины" />
+          <div class="banner__label">
+            <h3>Женщины</h3>
+            <span>Смотреть</span>
+          </div>
+        </a>
+        <a class="banner" href="catalog.html?gender=kids">
+          <img class="banner__img" src="img/other/kid.jpg" alt="Дети" />
+          <div class="banner__label">
+            <h3>Дети</h3>
+            <span>Смотреть</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="brand-strip">
+        <div class="brand-strip__row">
+          <span class="brand-strip__name">Nike</span>
+          <span class="brand-strip__name">Air Jordan</span>
+          <span class="brand-strip__name">Adidas</span>
+          <span class="brand-strip__name">New Balance</span>
+          <span class="brand-strip__name">Converse</span>
+          <span class="brand-strip__name">Vans</span>
+        </div>
+      </div>
+
+      <div class="features-row">
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>
+            <p class="feature__title">100% оригинал</p>
+            <p class="feature__text">Только оригинальные товары от проверенных поставщиков</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h11v8H3z"/><path d="M14 11h4l3 3v1h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+          <div>
+            <p class="feature__title">Быстрая доставка</p>
+            <p class="feature__text">Доставка по всей России от 1 до 7 дней</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v6h6"/><path d="M4.5 14a8 8 0 1 0 1.5-8.5L4 8"/></svg>
+          <div>
+            <p class="feature__title">Лёгкий возврат</p>
+            <p class="feature__text">Если не подошло — вернём деньги в течение 14 дней</p>
+          </div>
+        </div>
+        <div class="feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="10" width="16" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <div>
+            <p class="feature__title">Безопасная оплата</p>
+            <p class="feature__text">Надёжные способы оплаты и защита данных</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

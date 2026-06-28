@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Где нас найти?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html" aria-current="page">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">2</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="page-head__crumbs">Главная / Где нас найти?</p>
+        <h1>Где нас найти?</h1>
+      </div>
+    </div>
+
+    <section class="container contacts-layout">
+
+      <div class="map-placeholder">
+        <img src="img/other/map.png" alt="Карта — где нас найти" />
+      </div>
+
+      <div>
+
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div>
+            <p class="contact-card__label">Адрес</p>
+            <p class="contact-card__value">г. Ижевск, ул. Студенческая, д. 48А</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+          <div>
+            <p class="contact-card__label">Телефон</p>
+            <p class="contact-card__value">+7 (495) 000-00-00</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 6 8 7 8-7"/></svg>
+          <div>
+            <p class="contact-card__label">Email</p>
+            <p class="contact-card__value">sneakerdope_boss@mail.ru</p>
+          </div>
+        </div>
+
+        <div class="hours-table">
+          <div class="hours-table__row"><span>Пн — Пт</span><span>10:00 — 21:00</span></div>
+          <div class="hours-table__row"><span>Сб — Вс</span><span>11:00 — 20:00</span></div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

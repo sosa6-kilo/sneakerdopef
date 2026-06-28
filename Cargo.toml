@@ -1,0 +1,29 @@
+[package]
+name = "sneakerdope-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# веб-фреймворк
+axum = { version = "0.8", features = ["multipart"] }
+tokio = { version = "1", features = ["full"] }
+tower-http = { version = "0.6", features = ["cors", "fs"] }
+
+# база данных
+sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls-ring-webpki", "postgres", "chrono"] }
+
+# хэширование паролей
+argon2 = "0.5"
+
+# сериализация JSON
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# вспомогательные
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+dotenvy = "0.15"
+
+# логирование
+tracing = "0.1"
+tracing-subscriber = "0.3"

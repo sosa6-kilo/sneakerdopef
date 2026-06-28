@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Air Jordan 1 Retro High OG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html" aria-current="page">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">2</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="page-head__crumbs">Главная / Каталог / Air Jordan 1 Retro High OG</p>
+      </div>
+    </div>
+
+    <section class="container product-page">
+
+      <div class="product-gallery">
+        <div class="product-gallery__main">Фото товара</div>
+      </div>
+
+      <div class="product-info">
+        <p class="product-info__brand">Nike · Air Jordan</p>
+        <h1>Air Jordan 1 Retro High OG</h1>
+        <p class="product-info__price price">23 990 ₽</p>
+        <p class="product-info__stock">В наличии: 12 шт.</p>
+
+        <div class="product-info__row">
+          <p class="product-info__label">Размер, RU</p>
+          <div class="size-grid">
+            <input type="radio" name="size" id="size-38" />
+            <label for="size-38">38</label>
+
+            <input type="radio" name="size" id="size-39" />
+            <label for="size-39">39</label>
+
+            <input type="radio" name="size" id="size-40" checked />
+            <label for="size-40">40</label>
+
+            <input type="radio" name="size" id="size-41" />
+            <label for="size-41">41</label>
+
+            <input type="radio" name="size" id="size-42" disabled />
+            <label for="size-42">42</label>
+
+            <input type="radio" name="size" id="size-43" />
+            <label for="size-43">43</label>
+          </div>
+        </div>
+
+        <div class="product-info__row">
+          <p class="product-info__label">Количество</p>
+          <div class="qty-stepper">
+            <button type="button" aria-label="Уменьшить количество">−</button>
+            <input type="text" value="1" inputmode="numeric" aria-label="Количество" />
+            <button type="button" aria-label="Увеличить количество">+</button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn btn--primary">В корзину</button>
+        </div>
+
+        <table class="specs-table">
+          <tr><th>Бренд</th><td data-field="brand">Nike / Air Jordan</td></tr>
+          <tr><th>Материал верха</th><td data-field="material_upper">Натуральная кожа</td></tr>
+          <tr><th>Материал подошвы</th><td data-field="material_sole">Резина</td></tr>
+          <tr><th>Цвет</th><td data-field="color">Чёрный / белый</td></tr>
+          <tr><th>Сезон</th><td data-field="season">Демисезон</td></tr>
+          <tr><th>Страна происхождения</th><td data-field="country">Вьетнам</td></tr>
+        </table>
+
+        <p class="product-description">
+          Air Jordan 1 Retro High OG — модель, с которой в 1985 году началась
+          история одной из самых узнаваемых линеек кроссовок в мире. Высокий
+          силуэт, кожаный верх и культовая цветовая блокировка делают пару
+          одинаково подходящей и для повседневной носки, и для коллекции.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Личный кабинет</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="page-head__crumbs">Главная / Личный кабинет</p>
+        <h1>Личный кабинет</h1>
+      </div>
+    </div>
+
+    <section class="container profile-layout">
+
+      <aside class="profile-card" id="profile-card">
+        <p class="profile-card__name">Загрузка...</p>
+        <p class="profile-card__login"></p>
+
+        <div class="profile-card__row"></div>
+        <div class="profile-card__row"></div>
+
+        <button type="button" class="btn btn--ghost btn--full profile-card__logout">Выйти</button>
+      </aside>
+
+      <div>
+
+        <div class="orders-section">
+          <p class="orders-section__title">Текущие заказы</p>
+          <div id="orders-current">
+            <div class="orders-empty">Загрузка...</div>
+          </div>
+        </div>
+
+        <div class="orders-section">
+          <p class="orders-section__title">История заказов</p>
+          <div id="orders-history">
+            <div class="orders-empty">Загрузка...</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

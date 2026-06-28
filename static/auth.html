@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Вход и регистрация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">2</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="auth-box">
+
+        <input type="radio" name="auth-tab" id="tab-login" checked class="visually-hidden" />
+        <input type="radio" name="auth-tab" id="tab-register" class="visually-hidden" />
+
+        <div class="auth-tabs">
+          <label for="tab-login">Вход</label>
+          <label for="tab-register">Регистрация</label>
+        </div>
+
+        <div class="auth-forms">
+
+          <form class="auth-form" id="form-login" novalidate>
+            <div class="field">
+              <label for="login-login">Логин</label>
+              <input type="text" id="login-login" name="login" autocomplete="username" required />
+              <span class="field-error">Неверный логин или пароль</span>
+            </div>
+
+            <div class="field">
+              <label for="login-password">Пароль</label>
+              <input type="password" id="login-password" name="password" autocomplete="current-password" required />
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">Войти</button>
+
+            <p class="auth-form__hint">
+              Нет аккаунта? <a href="#tab-register">Зарегистрируйтесь</a>
+            </p>
+          </form>
+
+          <form class="auth-form" id="form-register" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="reg-surname">Фамилия</label>
+                <input type="text" id="reg-surname" name="surname" pattern="[А-Яа-яЁё\s\-]+" required />
+              </div>
+              <div class="field">
+                <label for="reg-name">Имя</label>
+                <input type="text" id="reg-name" name="name" pattern="[А-Яа-яЁё\s\-]+" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reg-patronymic">Отчество <span class="optional">(необязательно)</span></label>
+              <input type="text" id="reg-patronymic" name="patronymic" pattern="[А-Яа-яЁё\s\-]+" />
+            </div>
+
+            <div class="field">
+              <label for="reg-login">Логин</label>
+              <input type="text" id="reg-login" name="login" pattern="[A-Za-z0-9\-]+" required />
+              <span class="field-error">Логин уже занят</span>
+            </div>
+
+            <div class="field">
+              <label for="reg-email">Email</label>
+              <input type="email" id="reg-email" name="email" required />
+              <span class="field-error">Такой email уже зарегистрирован</span>
+            </div>
+
+            <div class="field">
+              <label for="reg-phone">Телефон</label>
+              <input type="tel" id="reg-phone" name="phone" required />
+              <span class="field-error">Такой номер уже зарегистрирован</span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="reg-password">Пароль</label>
+                <input type="password" id="reg-password" name="password" minlength="6" required />
+              </div>
+              <div class="field">
+                <label for="reg-password-repeat">Повтор пароля</label>
+                <input type="password" id="reg-password-repeat" name="password_repeat" minlength="6" required />
+                <span class="field-error">Пароли не совпадают</span>
+              </div>
+            </div>
+
+            <label class="field-checkbox">
+              <input type="checkbox" name="rules" required />
+              Согласен с правилами сайта и обработкой персональных данных
+            </label>
+            <span class="field-error" data-error-for="rules">Нужно согласиться с правилами</span>
+
+            <button type="submit" class="btn btn--primary btn--full">Зарегистрироваться</button>
+
+            <p class="auth-form__hint">
+              Уже есть аккаунт? <a href="#tab-login">Войдите</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

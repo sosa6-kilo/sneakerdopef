@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Админ-панель</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="page-head__crumbs">Главная / Админ-панель</p>
+        <h1>Админ-панель</h1>
+      </div>
+    </div>
+
+    <section class="container admin-layout">
+
+      <div class="admin-tabs">
+        <button type="button" class="admin-tabs__btn is-active" data-admin-tab="orders">Заказы</button>
+        <button type="button" class="admin-tabs__btn" data-admin-tab="products">Товары</button>
+        <button type="button" class="admin-tabs__btn" data-admin-tab="brands">Бренды</button>
+      </div>
+
+      <!-- ===== Вкладка: заказы ===== -->
+      <div class="admin-panel" data-admin-panel="orders">
+        <div class="admin-panel__head">
+          <h2>Заказы</h2>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="admin-orders-table">
+            <thead>
+              <tr>
+                <th>№</th>
+                <th>Покупатель</th>
+                <th>Состав заказа</th>
+                <th>Доставка</th>
+                <th>Сумма</th>
+                <th>Статус</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="7" class="admin-table__empty">Загрузка...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== Вкладка: товары ===== -->
+      <div class="admin-panel" data-admin-panel="products" hidden>
+        <div class="admin-panel__head">
+          <h2>Товары</h2>
+          <button type="button" class="btn btn--primary btn--small" id="product-add-open">Добавить товар</button>
+        </div>
+
+        <div class="admin-toolbar">
+          <label for="admin-product-sort">Сортировать:</label>
+          <select id="admin-product-sort">
+            <option value="created_desc">По новизне</option>
+            <option value="name_asc">По названию: А — Я</option>
+            <option value="price_asc">По цене: сначала дешевле</option>
+            <option value="price_desc">По цене: сначала дороже</option>
+            <option value="stock_asc">По остатку: сначала меньше</option>
+            <option value="stock_desc">По остатку: сначала больше</option>
+          </select>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="admin-products-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Бренд</th>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Остаток</th>
+                <th>Категория</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="7" class="admin-table__empty">Загрузка...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== Вкладка: бренды ===== -->
+      <div class="admin-panel" data-admin-panel="brands" hidden>
+        <div class="admin-panel__head">
+          <h2>Бренды</h2>
+        </div>
+
+        <form class="admin-inline-form" id="admin-brand-form">
+          <input type="text" name="name" placeholder="Название бренда" required />
+          <button type="submit" class="btn btn--primary btn--small">Добавить</button>
+        </form>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table" id="admin-brands-table">
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="2" class="admin-table__empty">Загрузка...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== Модалка: добавление/редактирование товара ===== -->
+    <div class="checkout-overlay" id="product-overlay" hidden>
+      <div class="checkout-modal admin-modal">
+        <div class="checkout-modal__head">
+          <h2 id="product-modal-title">Новый товар</h2>
+          <button type="button" class="checkout-modal__close" id="product-modal-close" aria-label="Закрыть">&times;</button>
+        </div>
+
+        <form class="checkout-form" id="product-form" novalidate>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="product-name">Название</label>
+              <input type="text" id="product-name" name="name" required />
+              <span class="field-error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="product-brand">Бренд</label>
+              <select id="product-brand" name="brand" required></select>
+              <span class="field-error" data-error-for="brand"></span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="product-price">Цена, ₽</label>
+              <input type="number" id="product-price" name="price" min="0" required />
+            </div>
+            <div class="field">
+              <label for="product-stock">В наличии, шт.</label>
+              <input type="number" id="product-stock" name="stock" min="0" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="product-gender">Категория</label>
+            <select id="product-gender" name="gender" required>
+              <option value="male">Мужской</option>
+              <option value="female">Женский</option>
+              <option value="kids">Детский</option>
+              <option value="unisex">Унисекс</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="product-sizes">Размеры, RU <span class="optional">(через запятую)</span></label>
+            <input type="text" id="product-sizes" name="size_options" placeholder="38, 39, 40, 41" />
+          </div>
+
+          <div class="field">
+            <label for="product-image">Ссылка на фото</label>
+            <input type="text" id="product-image" name="image" placeholder="/images/product.jpg" />
+          </div>
+
+          <div class="field">
+            <label for="product-image-file">Или загрузить фото с компьютера</label>
+            <input type="file" id="product-image-file" name="image_file" accept="image/*" />
+            <p class="field-hint" id="product-image-file-name"></p>
+          </div>
+
+          <div class="field">
+            <label for="product-description">Описание</label>
+            <textarea id="product-description" name="description" rows="3"></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="product-material-upper">Материал верха</label>
+              <input type="text" id="product-material-upper" name="material_upper" />
+            </div>
+            <div class="field">
+              <label for="product-material-sole">Материал подошвы</label>
+              <input type="text" id="product-material-sole" name="material_sole" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="product-color">Цвет</label>
+              <input type="text" id="product-color" name="color" />
+            </div>
+            <div class="field">
+              <label for="product-season">Сезон</label>
+              <input type="text" id="product-season" name="season" placeholder="демисезон" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="product-country">Страна происхождения</label>
+            <input type="text" id="product-country" name="country" />
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Сохранить товар</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

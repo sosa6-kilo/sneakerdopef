@@ -1,0 +1,237 @@
+.admin-layout {
+  padding-block: 48px;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+
+.admin-tabs__btn {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+}
+
+.admin-tabs__btn:hover {
+  color: var(--ink);
+}
+
+.admin-tabs__btn.is-active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.admin-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-panel__head h2 {
+  font-size: 20px;
+}
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.admin-toolbar select {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.admin-table-wrap {
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 14px 16px;
+  white-space: nowrap;
+}
+
+.admin-table th {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table td:nth-child(3) {
+  white-space: normal;
+  max-width: 320px;
+}
+
+.admin-table__actions {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.admin-table__empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 32px 16px;
+  white-space: normal;
+}
+
+.admin-inline-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  max-width: 420px;
+}
+
+.admin-inline-form input {
+  flex: 1;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.admin-inline-form input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field label .optional {
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.field input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.field-error {
+  font-size: 12px;
+  color: var(--danger);
+  display: none;
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 14px;
+}
+
+.field input[type="file"] {
+  height: auto;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 520px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-modal {
+  max-width: 600px;
+}
+
+.admin-modal textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.admin-modal textarea:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.admin-modal select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.admin-modal select:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+@media (max-width: 720px) {
+  .admin-panel__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .admin-inline-form {
+    max-width: none;
+  }
+}

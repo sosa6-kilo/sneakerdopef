@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sneakerdope — Корзина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">Sneakerdope</a>
+      <nav class="main-nav">
+        <a href="index.html">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Где нас найти?</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="icon-btn" aria-label="Корзина" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count">2</span>
+        </a>
+        <div class="auth-links">
+          <a href="auth.html">Войти</a>
+          <span class="divider">/</span>
+          <a href="auth.html">Регистрация</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="page-head">
+      <div class="container">
+        <p class="page-head__crumbs">Главная / Корзина</p>
+        <h1>Корзина</h1>
+      </div>
+    </div>
+
+    <section class="container cart-layout">
+
+      <div class="cart-list">
+
+        <div class="cart-item">
+          <div class="cart-item__media"></div>
+          <div>
+            <p class="cart-item__brand">Nike · Air Jordan</p>
+            <p class="cart-item__name">Air Jordan 1 Retro High OG</p>
+            <p class="cart-item__size">Размер RU 40</p>
+            <button class="cart-item__remove" type="button">Удалить</button>
+          </div>
+          <div class="qty-stepper">
+            <button type="button" aria-label="Уменьшить количество">−</button>
+            <input type="text" value="1" inputmode="numeric" aria-label="Количество" />
+            <button type="button" aria-label="Увеличить количество">+</button>
+          </div>
+          <p class="cart-item__price price">23 990 ₽</p>
+        </div>
+
+        <div class="cart-item">
+          <div class="cart-item__media"></div>
+          <div>
+            <p class="cart-item__brand">Converse</p>
+            <p class="cart-item__name">Chuck 70 Canvas Black</p>
+            <p class="cart-item__size">Размер RU 42</p>
+            <button class="cart-item__remove" type="button">Удалить</button>
+          </div>
+          <div class="qty-stepper">
+            <button type="button" aria-label="Уменьшить количество">−</button>
+            <input type="text" value="1" inputmode="numeric" aria-label="Количество" />
+            <button type="button" aria-label="Увеличить количество">+</button>
+          </div>
+          <p class="cart-item__price price">7 990 ₽</p>
+        </div>
+
+        <!--
+        Пустая корзина (показывается, если товаров нет):
+
+        <div class="cart-empty">
+          <p>В корзине пока пусто.</p>
+          <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+        </div>
+        -->
+
+      </div>
+
+      <aside class="cart-summary">
+        <h2>Итого</h2>
+        <div class="cart-summary__row">
+          <span>Товары, 2 шт.</span>
+          <span class="price">31 980 ₽</span>
+        </div>
+        <div class="cart-summary__row cart-summary__row--total">
+          <span>К оплате</span>
+          <span class="price">31 980 ₽</span>
+        </div>
+
+        <button class="btn btn--primary btn--full" type="button" id="checkout-open" style="margin-top:20px;">
+          Оформить заказ
+        </button>
+
+        <p class="cart-summary__note">
+          Заказ оформляется на адрес доставки в выбранный временной слот.
+          Подтверждение действия — ваш пароль от аккаунта.
+        </p>
+      </aside>
+
+    </section>
+
+    <!-- ===== Модалка оформления заказа ===== -->
+    <div class="checkout-overlay" id="checkout-overlay" hidden>
+      <div class="checkout-modal">
+        <div class="checkout-modal__head">
+          <h2>Оформление заказа</h2>
+          <button type="button" class="checkout-modal__close" id="checkout-close" aria-label="Закрыть">&times;</button>
+        </div>
+
+        <form class="checkout-form" id="checkout-form" novalidate>
+
+          <div class="checkout-form__summary">
+            <span id="checkout-summary-qty">Товары, 0 шт.</span>
+            <span id="checkout-summary-total">0 ₽</span>
+          </div>
+
+          <div class="checkout-field">
+            <label for="checkout-address">Адрес доставки</label>
+            <input type="text" id="checkout-address" name="delivery_address" placeholder="Город, улица, дом, квартира" required />
+            <span class="checkout-form__error" data-error-for="delivery_address">Укажите адрес доставки</span>
+          </div>
+
+          <div class="checkout-field">
+            <label for="checkout-date">Дата доставки</label>
+            <input type="date" id="checkout-date" name="delivery_date" required />
+            <span class="checkout-form__error" data-error-for="delivery_date">Выберите дату доставки</span>
+          </div>
+
+          <div class="checkout-field">
+            <label>Время доставки</label>
+            <div class="slot-grid" id="checkout-slots">
+              <p class="slot-grid__empty">Сначала выберите дату</p>
+            </div>
+            <span class="checkout-form__error" data-error-for="delivery_slot">Выберите время доставки</span>
+          </div>
+
+          <div class="checkout-field">
+            <label for="checkout-password">Пароль от аккаунта</label>
+            <input type="password" id="checkout-password" name="password" autocomplete="current-password" required />
+            <span class="checkout-form__error" data-error-for="password">Неверный пароль</span>
+          </div>
+
+          <span class="checkout-form__error" data-error-for="general"></span>
+
+          <button type="submit" class="btn btn--primary btn--full">Подтвердить заказ</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Sneakerdope.</span>
+        <a href="contacts.html">Где нас найти?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
