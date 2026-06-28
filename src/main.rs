@@ -534,6 +534,29 @@ async fn latest_products(State(state): State<SharedState>) -> Json<Vec<Product>>
     Json(rows_to_products(&state.pool, rows).await)
 }
 
+async fn bestseller_products(State(state): State<SharedState>) -> Json<Vec<Product>> {
+    // Считаем суммарное количество проданных штук по товару, учитывая только
+    // заказы, которые не были отменены. Сортируем по этой сумме по убыванию,
+    // показываем только товары, которые ещё есть в наличии.
+    let sql = format!(
+        "{PRODUCT_SELECT}
+         JOIN (
+             SELECT oi.product_id, SUM(oi.qty) AS sold_qty
+             FROM order_items oi
+             JOIN orders o ON o.id = oi.order_id
+             WHERE oi.product_id IS NOT NULL AND o.status != 'cancelled'
+             GROUP BY oi.product_id
+         ) sales ON sales.product_id = p.id
+         WHERE p.stock > 0
+         ORDER BY sales.sold_qty DESC, p.created_at DESC
+         LIMIT 3"
+    );
+
+    let rows: Vec<ProductRow> = sqlx::query_as(&sql).fetch_all(&state.pool).await.unwrap_or_default();
+
+    Json(rows_to_products(&state.pool, rows).await)
+}
+
 async fn list_brands(State(state): State<SharedState>) -> Json<Vec<Brand>> {
     let brands: Vec<Brand> = sqlx::query_as("SELECT id, name FROM brands ORDER BY name")
         .fetch_all(&state.pool)
@@ -1585,6 +1608,7 @@ async fn main() {
     let app = Router::new()
         .route("/api/products", get(list_products))
         .route("/api/products/latest", get(latest_products))
+        .route("/api/products/bestsellers", get(bestseller_products))
         .route("/api/products/{id}", get(get_product))
         .route("/api/brands", get(list_brands))
         .route("/api/register", post(register))
