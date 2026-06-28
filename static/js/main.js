@@ -202,6 +202,9 @@ function productCardHtml(p) {
 
 function bindAddToCartButtons() {
   document.querySelectorAll("[data-add-to-cart]").forEach((btn) => {
+    if (btn.dataset.bound === "1") return;
+    btn.dataset.bound = "1";
+
     btn.addEventListener("click", async (e) => {
       e.preventDefault();
       const productId = Number(btn.getAttribute("data-add-to-cart"));
@@ -355,41 +358,6 @@ async function renderBrandStrip() {
 
 
 // ГЛАВНАЯ СТРАНИЦА (index.html)
-async function renderBestsellers() {
-  const bestsellersBlock = document.querySelector(".bestsellers");
-  if (!bestsellersBlock) return;
-
-  const head = bestsellersBlock.querySelector(".bestsellers__head");
-
-  const result = await api("/api/products/bestsellers");
-  if (!result.ok || !result.data) return;
-
-  const top3 = result.data.slice(0, 3);
-
-  const itemsHtml = top3
-    .map((p, i) => {
-      const imageSrc = productImageSrc(p.image);
-      const thumbHtml = imageSrc
-        ? '<img src="' + imageSrc + '" alt="' + p.name + '" loading="lazy" />'
-        : "";
-      return (
-        '<div class="bestsellers__item">' +
-          '<span class="bestsellers__rank">0' + (i + 1) + "</span>" +
-          '<div class="bestsellers__thumb">' + thumbHtml + "</div>" +
-          "<div>" +
-            '<p class="bestsellers__name"><a href="product.html?id=' + p.id + '">' + p.name + "</a></p>" +
-            '<p class="bestsellers__price">' + formatPrice(p.price) + "</p>" +
-          "</div>" +
-        "</div>"
-      );
-    })
-    .join("");
-
-  bestsellersBlock.innerHTML = "";
-  if (head) bestsellersBlock.appendChild(head);
-  bestsellersBlock.insertAdjacentHTML("beforeend", itemsHtml);
-}
-
 async function initIndexPage() {
   const result = await api("/api/products/latest");
   if (!result.ok || !result.data) return;
@@ -400,7 +368,30 @@ async function initIndexPage() {
 
   renderBrandStrip();
 
-  renderBestsellers();
+  const bestsellersBlock = document.querySelector(".bestsellers");
+  if (bestsellersBlock) {
+    const head = bestsellersBlock.querySelector(".bestsellers__head");
+    const top3 = products.slice(0, 3);
+
+    const itemsHtml = top3
+      .map((p, i) => {
+        return (
+          '<div class="bestsellers__item">' +
+            '<span class="bestsellers__rank">0' + (i + 1) + "</span>" +
+            '<div class="bestsellers__thumb"></div>' +
+            "<div>" +
+              '<p class="bestsellers__name"><a href="product.html?id=' + p.id + '">' + p.name + "</a></p>" +
+              '<p class="bestsellers__price">' + formatPrice(p.price) + "</p>" +
+            "</div>" +
+          "</div>"
+        );
+      })
+      .join("");
+
+    bestsellersBlock.innerHTML = "";
+    if (head) bestsellersBlock.appendChild(head);
+    bestsellersBlock.insertAdjacentHTML("beforeend", itemsHtml);
+  }
 
   const grid4 = document.querySelector(".grid-4");
   if (grid4) {
